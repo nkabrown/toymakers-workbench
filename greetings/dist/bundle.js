@@ -77,9 +77,8 @@
 	  },
 	  onFormSubmit: function onFormSubmit(e) {
 	    e.preventDefault();
-	    var name = this.state.name;
-	    e.target.value = '';
-	    this.setState({ value: '' });
+	    this.setState({ value: e.target.children[1].value });
+	    e.target.children[1].value = '';
 	    return;
 	  },
 	  render: function render() {
@@ -91,9 +90,9 @@
 	        null,
 	        'What\'s your name?'
 	      ),
-	      React.createElement('input', { type: 'text', placeholder: 'Name', id: 'name', value: this.state.value, onChange: this.handleNameChange }),
+	      React.createElement('input', { type: 'text', placeholder: 'Name', id: 'name' }),
 	      React.createElement('input', { type: 'submit', form: 'name', value: 'Clear' }),
-	      React.createElement(Salutation, { data: this.state.value })
+	      React.createElement(Salutation, { name: this.state.value })
 	    );
 	  }
 	});
@@ -102,12 +101,11 @@
 	  displayName: 'Salutation',
 	
 	  render: function render() {
-	    var name = this.props.data;
-	    return this.props.data ? React.createElement(
+	    return this.props.name ? React.createElement(
 	      'p',
 	      { className: 'greetings' },
 	      'Well, ',
-	      this.props.data,
+	      this.props.name,
 	      ' nice to meet you!'
 	    ) : null;
 	  }
