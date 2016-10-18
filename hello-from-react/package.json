@@ -1,0 +1,20 @@
+{
+  "name": "hello-from-react",
+  "version": "0.0.1",
+  "description": "react says hello",
+  "main": "index.js",
+  "author": "Nathan Brown <nkabrown@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "react-scripts": "^0.6.1"
+  },
+  "dependencies": {
+    "react": "^15.3.2",
+    "react-dom": "^15.3.2"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "eject": "react-scripts eject"
+  }
+}
